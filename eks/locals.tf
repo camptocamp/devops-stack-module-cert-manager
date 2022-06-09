@@ -21,7 +21,7 @@ locals {
                 }
               }
               selector = {
-                dnsZones = [for domain in var.all_domains : domain]
+                dnsZones = [for domain in local.all_domains : domain]
               }
             },
             {

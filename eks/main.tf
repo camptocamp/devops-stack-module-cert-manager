@@ -77,7 +77,6 @@ module "cert-manager" {
 
   cluster_name     = var.cluster_name
   base_domain      = var.base_domain
-  all_domains      = local.all_domains
   argocd_namespace = var.argocd_namespace
 
   namespace = var.namespace
