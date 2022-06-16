@@ -1,11 +1,11 @@
 locals {
-  all_domains = toset(compact(distinct(concat([var.base_domain], var.other_domains)))) 
-} 
+  all_domains = toset(compact(concat([var.base_domain], var.other_domains)))
+}
 
 data "aws_route53_zone" "this" {
   for_each = local.all_domains
 
-    name = each.key
+  name = each.key
 }
 
 data "aws_region" "current" {}
@@ -19,7 +19,7 @@ module "iam_assumable_role_cert_manager" {
   number_of_role_policy_arns    = 1
   role_name                     = format("cert-manager-%s", var.cluster_name)
   provider_url                  = replace(var.cluster_oidc_issuer_url, "https://", "")
-  role_policy_arns = [for domain in local.all_domains : aws_iam_policy.cert_manager[domain].arn]
+  role_policy_arns              = [for domain in local.all_domains : aws_iam_policy.cert_manager[domain].arn]
   oidc_fully_qualified_subjects = ["system:serviceaccount:cert-manager:cert-manager"]
 }
 
@@ -28,7 +28,7 @@ resource "aws_iam_policy" "cert_manager" {
 
   name_prefix = "cert-manager"
   description = "EKS cert-manager policy for cluster ${var.cluster_name}"
-  policy = data.aws_iam_policy_document.cert_manager[each.key].json
+  policy      = data.aws_iam_policy_document.cert_manager[each.key].json
 }
 
 data "aws_iam_policy_document" "cert_manager" {
