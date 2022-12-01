@@ -1,13 +1,13 @@
-data "azurerm_resource_group" "cluster_resource_group" {
-  name = var.cluster_resource_group_name
+data "azurerm_resource_group" "node_resource_group" {
+  name = var.node_resource_group_name
 }
 
 data "azurerm_subscription" "primary" {
 }
 
 resource "azurerm_user_assigned_identity" "cert_manager" {
-  resource_group_name = data.azurerm_resource_group.cluster_resource_group.name
-  location            = data.azurerm_resource_group.cluster_resource_group.location
+  resource_group_name = data.azurerm_resource_group.node_resource_group.name
+  location            = data.azurerm_resource_group.node_resource_group.location
   name                = "cert-manager"
 }
 
