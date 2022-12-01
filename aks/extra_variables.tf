@@ -1,5 +1,5 @@
-variable "cluster_resource_group_name" {
-  description = "The cluster's resource group name."
+variable "node_resource_group_name" {
+  description = "The managed AKS resource group name."
   type        = string
 }
 
