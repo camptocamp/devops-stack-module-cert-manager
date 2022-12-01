@@ -26,7 +26,7 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] (data source)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.cluster_resource_group] (data source)
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] (data source)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] (data source)
 
 === Required Inputs
@@ -51,15 +51,15 @@ Description: n/a
 
 Type: `string`
 
-==== [[input_cluster_resource_group_name]] <<input_cluster_resource_group_name,cluster_resource_group_name>>
-
-Description: The cluster's resource group name.
-
-Type: `string`
-
 ==== [[input_dns_zone_resource_group_name]] <<input_dns_zone_resource_group_name,dns_zone_resource_group_name>>
 
 Description: The Azure DNS zone's resource group name.
+
+Type: `string`
+
+==== [[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
+
+Description: The managed AKS resource group name.
 
 Type: `string`
 
@@ -134,7 +134,7 @@ Description: n/a
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] |data source
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.cluster_resource_group] |data source
+|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] |data source
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] |data source
 |===
 
@@ -157,12 +157,6 @@ Description: n/a
 
 |[[input_cluster_name]] <<input_cluster_name,cluster_name>>
 |n/a
-|`string`
-|n/a
-|yes
-
-|[[input_cluster_resource_group_name]] <<input_cluster_resource_group_name,cluster_resource_group_name>>
-|The cluster's resource group name.
 |`string`
 |n/a
 |yes
@@ -190,6 +184,12 @@ Description: n/a
 |`string`
 |`"cert-manager"`
 |no
+
+|[[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
+|The managed AKS resource group name.
+|`string`
+|n/a
+|yes
 
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
