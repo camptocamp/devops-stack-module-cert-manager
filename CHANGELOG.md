@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.1...1.0.0-alpha.2) (2022-12-01)
+
+
+### Bug Fixes
+
+* **aks:** homogenize rg naming convention between modules ([ca60f8f](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/ca60f8fb8cc84047276593737fb912146eee8f10))
+
 ## 1.0.0-alpha.1 (2022-11-18)
 
 
