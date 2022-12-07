@@ -6,6 +6,7 @@ module "cert-manager" {
   argocd_namespace = var.argocd_namespace
 
   namespace = var.namespace
+  app_autosync = var.app_autosync
 
   helm_values = concat(local.helm_values, var.helm_values)
 
