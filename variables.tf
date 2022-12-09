@@ -35,7 +35,7 @@ variable "dependency_ids" {
 
 variable "app_autosync" {
   type    = bool
-  default = false
+  default = true
 }
 
 variable "target_revision" {
