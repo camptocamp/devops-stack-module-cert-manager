@@ -16,7 +16,7 @@ locals {
               dns01 = {
                 azureDNS = {
                   subscriptionID    = split("/", data.azurerm_subscription.primary.id)[2]
-                  resourceGroupName = data.azurerm_resource_group.this.name
+                  resourceGroupName = var.dns_zone_resource_group_name
                   hostedZoneName    = var.base_domain
                   # Azure Cloud Environment, default to AzurePublicCloud
                   environment = "AzurePublicCloud"

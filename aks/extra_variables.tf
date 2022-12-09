@@ -1,9 +1,9 @@
-variable "resource_group_name" {
-  description = "The Resource Group where the DNS zone should exist."
+variable "node_resource_group_name" {
+  description = "The managed AKS resource group name."
   type        = string
 }
 
-variable "node_resource_group_name" {
-  description = "The Resource Group of the Managed Kubernetes Cluster."
+variable "dns_zone_resource_group_name" {
+  description = "The Azure DNS zone's resource group name."
   type        = string
 }
