@@ -26,7 +26,7 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] (data source)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.this] (data source)
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] (data source)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] (data source)
 
 === Required Inputs
@@ -51,15 +51,15 @@ Description: n/a
 
 Type: `string`
 
-==== [[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
+==== [[input_dns_zone_resource_group_name]] <<input_dns_zone_resource_group_name,dns_zone_resource_group_name>>
 
-Description: The Resource Group of the Managed Kubernetes Cluster.
+Description: The Azure DNS zone's resource group name.
 
 Type: `string`
 
-==== [[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
+==== [[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
 
-Description: The Resource Group where the DNS zone should exist.
+Description: The managed AKS resource group name.
 
 Type: `string`
 
@@ -73,7 +73,7 @@ Description: n/a
 
 Type: `bool`
 
-Default: `false`
+Default: `true`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -105,7 +105,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"1.0.0-alpha.2"`
+Default: `"main"`
 
 === Outputs
 
@@ -142,7 +142,7 @@ Description: n/a
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] |data source
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.this] |data source
+|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] |data source
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] |data source
 |===
 
@@ -154,8 +154,9 @@ Description: n/a
 |[[input_app_autosync]] <<input_app_autosync,app_autosync>>
 |n/a
 |`bool`
-|`false`
+|`true`
 |no
+
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |n/a
 |`string`
@@ -199,13 +200,7 @@ Description: n/a
 |no
 
 |[[input_node_resource_group_name]] <<input_node_resource_group_name,node_resource_group_name>>
-|The Resource Group of the Managed Kubernetes Cluster.
-|`string`
-|n/a
-|yes
-
-|[[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
-|The Resource Group where the DNS zone should exist.
+|The managed AKS resource group name.
 |`string`
 |n/a
 |yes
@@ -213,7 +208,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"1.0.0-alpha.2"`
+|`"main"`
 |no
 
 |===

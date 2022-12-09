@@ -58,7 +58,7 @@ Description: n/a
 
 Type: `bool`
 
-Default: `false`
+Default: `true`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -90,7 +90,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"1.0.0-alpha.2"`
+Default: `"main"`
 
 === Outputs
 
@@ -136,7 +136,7 @@ Description: n/a
 |[[input_app_autosync]] <<input_app_autosync,app_autosync>>
 |n/a
 |`bool`
-|`false`
+|`true`
 |no
 
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
@@ -178,7 +178,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"1.0.0-alpha.2"`
+|`"main"`
 |no
 
 |===
