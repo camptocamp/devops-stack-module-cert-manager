@@ -53,11 +53,6 @@ variable "app_autosync" {
   }
 }
 
-variable "target_revision" {
-  description = "Override of target revision of the application chart."
-  type        = string
-  default     = "main" # x-release-please-version
-}
 #######################
 ## Module variables
 #######################
