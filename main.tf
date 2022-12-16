@@ -73,11 +73,7 @@ resource "argocd_application" "this" {
     }
 
     sync_policy {
-      automated = {
-        allow_empty = false
-        prune       = true
-        self_heal   = true
-      }
+      automated = var.app_autosync
 
       retry {
         limit = "5"
