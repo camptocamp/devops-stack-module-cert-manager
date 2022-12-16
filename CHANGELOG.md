@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.0-alpha.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.2...v1.1.0-alpha.2) (2022-12-16)
+## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-16)
 
 
 ### Features
