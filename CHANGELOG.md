@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0-alpha.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.2...v1.1.0-alpha.2) (2022-12-16)
+
+
+### Features
+
+* add variable to configure auto-sync of the Argo CD Application ([#24](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/24)) ([f533057](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/f533057062679389499a60a7061f929bf8469c41))
+
 ## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.1...1.0.0-alpha.2) (2022-12-01)
 
 
