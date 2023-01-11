@@ -40,11 +40,11 @@ locals {
       }
       resources = {
         limits = {
-          memory = "64Mi"
+          memory = "128Mi"
         }
         requests = {
           cpu    = "10m"
-          memory = "16Mi"
+          memory = "32Mi"
         }
       }
 
@@ -52,11 +52,11 @@ locals {
         replicaCount = 2
         resources = {
           limits = {
-            memory = "24Mi"
+            memory = "64Mi"
           }
           requests = {
             cpu    = "10m"
-            memory = "16Mi"
+            memory = "32Mi"
           }
         }
       }
