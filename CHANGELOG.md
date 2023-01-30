@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0-alpha.4](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.4...v1.1.0-alpha.4) (2023-01-30)
+
+
+### Features
+
+* **aks:** increase default memory resources ([#27](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/27)) ([029559a](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/029559ad2f9ec20c8e66d1f8c4bc6e60c4256da6))
+* **helm:** bump version to 1.11 ([#28](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/28)) ([ca4765a](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/ca4765a2d98e193ec9a07280332cc7356d39c01a))
+
 ## [1.0.0-alpha.4](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-01-30)
 
 
