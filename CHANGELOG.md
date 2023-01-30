@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.4](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-01-30)
+
+
+### Features
+
+* **wait:** add dependency to var app_autosync ([#26](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/26)) ([b346753](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/b3467537c79e4b3ee3812a24365f706b7675c8f1))
+
 ## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-16)
 
 
