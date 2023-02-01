@@ -53,6 +53,12 @@ variable "app_autosync" {
   }
 }
 
+variable "deep_merge_append_list" {
+  description = "A boolean flag to enable/disable appending lists instead of overwriting them."
+  type        = bool
+  default     = false
+}
+
 #######################
 ## Module variables
 #######################

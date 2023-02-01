@@ -26,11 +26,6 @@ locals {
                 dnsZones = [var.base_domain]
               }
             },
-            {
-              http01 = {
-                ingress = {}
-              }
-            },
           ]
         }
       }

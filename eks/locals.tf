@@ -24,11 +24,6 @@ locals {
                 dnsZones = [for domain in local.all_domains : domain]
               }
             },
-            {
-              http01 = {
-                ingress = {}
-              }
-            },
           ]
         }
       }
