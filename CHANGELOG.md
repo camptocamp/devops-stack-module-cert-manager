@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0-alpha.6](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-02-01)
+
+
+### Features
+
+* enable deep merge of http01 and dns01 as list (opt-in using variable) ([448b762](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/448b76296fe3189551a0185074b6d1e973c47f9e))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0-alpha.6 ([#35](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/35)) ([814fd9b](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/814fd9bcb7d3641a9ee9b24d4ce40b6d6426facc))
+
 ## [1.0.0-alpha.5](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-01-30)
 
 
