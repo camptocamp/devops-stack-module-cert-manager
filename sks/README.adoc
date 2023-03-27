@@ -1,11 +1,5 @@
 // BEGIN_TF_DOCS
-=== Requirements
 
-No requirements.
-
-=== Providers
-
-No providers.
 
 === Modules
 
@@ -16,10 +10,6 @@ The following Modules are called:
 Source: ../self-signed/
 
 Version:
-
-=== Resources
-
-No resources.
 
 === Required Inputs
 
@@ -77,6 +67,14 @@ Default:
 }
 ----
 
+==== [[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
+
+Description: List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
+
+Type: `list`
+
+Default: `[]`
+
 ==== [[input_deep_merge_append_list]] <<input_deep_merge_append_list,deep_merge_append_list>>
 
 Description: A boolean flag to enable/disable appending lists instead of overwriting them.
@@ -115,7 +113,23 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.5"`
+Default: `"v1.0.0-alpha.6"`
+
+==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
+
+Description: Whether to use the default dns01 solver configuration.
+
+Type: `bool`
+
+Default: `true`
+
+==== [[input_use_default_http01_solver]] <<input_use_default_http01_solver,use_default_http01_solver>>
+
+Description: Whether to use the default http01 solver configuration.
+
+Type: `bool`
+
+Default: `true`
 
 === Outputs
 
@@ -185,6 +199,12 @@ object({
 |n/a
 |yes
 
+|[[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
+|List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
+|`list`
+|`[]`
+|no
+
 |[[input_deep_merge_append_list]] <<input_deep_merge_append_list,deep_merge_append_list>>
 |A boolean flag to enable/disable appending lists instead of overwriting them.
 |`bool`
@@ -218,7 +238,19 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.5"`
+|`"v1.0.0-alpha.6"`
+|no
+
+|[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
+|Whether to use the default dns01 solver configuration.
+|`bool`
+|`true`
+|no
+
+|[[input_use_default_http01_solver]] <<input_use_default_http01_solver,use_default_http01_solver>>
+|Whether to use the default http01 solver configuration.
+|`bool`
+|`true`
 |no
 
 |===
