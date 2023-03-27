@@ -41,7 +41,7 @@ variable "use_default_http01_solver" {
 
 variable "custom_solver_configurations" {
   description = "List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled)."
-  type        = list
+  type        = list(any)
   default     = []
 }
 
