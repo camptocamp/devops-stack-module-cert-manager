@@ -65,7 +65,7 @@ Default:
 
 Description: List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
 
-Type: `list`
+Type: `list(any)`
 
 Default: `[]`
 
@@ -195,7 +195,7 @@ object({
 
 |[[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
 |List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
-|`list`
+|`list(any)`
 |`[]`
 |no
 
