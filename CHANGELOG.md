@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.6...v1.0.0) (2023-03-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* this commit reintroduces the http01 solver by default.
+
+### Features
+
+* add variables for solvers configurations ([#38](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/38)) ([cae70c8](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/cae70c808f5a2d6e9908f122057e592f2af25e05))
+
 ## [1.0.0-alpha.6](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-02-01)
 
 
