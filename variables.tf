@@ -27,6 +27,24 @@ variable "namespace" {
   default = "cert-manager"
 }
 
+variable "use_default_dns01_solver" {
+  description = "Whether to use the default dns01 solver configuration."
+  type        = bool
+  default     = true
+}
+
+variable "use_default_http01_solver" {
+  description = "Whether to use the default http01 solver configuration."
+  type        = bool
+  default     = true
+}
+
+variable "custom_solver_configurations" {
+  description = "List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled)."
+  type        = list(any)
+  default     = []
+}
+
 variable "helm_values" {
   description = "Helm values, passed as a list of HCL structures."
   type        = any
