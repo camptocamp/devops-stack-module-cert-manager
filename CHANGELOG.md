@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0...v1.0.1) (2023-04-03)
+
+
+### Documentation
+
+* remove orphaned symbolic link ([#40](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/40)) ([b56afc9](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/b56afc9092bb932aacfb26c7355bf16f6fa561ea))
+
 ## [1.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0-alpha.6...v1.0.0) (2023-03-28)
 
 
