@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.1...v2.0.0) (2023-04-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* **azure:** replace pod identity with workload identity ([#42](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/42))
+
+### Features
+
+* **azure:** replace pod identity with workload identity ([#42](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/42)) ([16ac840](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/16ac840ae778697b56b18744a1ba7c8e23cbab40))
+
 ## [1.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.0...v1.0.1) (2023-04-03)
 
 
