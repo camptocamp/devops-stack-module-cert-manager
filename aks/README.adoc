@@ -21,6 +21,7 @@ Version:
 
 The following resources are used by this module:
 
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential[azurerm_federated_identity_credential.cert_manager] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] (data source)
@@ -46,6 +47,12 @@ Type: `string`
 ==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
 
 Description: n/a
+
+Type: `string`
+
+==== [[input_cluster_oidc_issuer_url]] <<input_cluster_oidc_issuer_url,cluster_oidc_issuer_url>>
+
+Description: The OIDC issuer URL that is associated with the cluster.
 
 Type: `string`
 
@@ -135,7 +142,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.6"`
+Default: `"v1.0.1"`
 
 ==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 
@@ -185,6 +192,7 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Type
+|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential[azurerm_federated_identity_credential.cert_manager] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] |data source
@@ -241,6 +249,12 @@ object({
 |n/a
 |yes
 
+|[[input_cluster_oidc_issuer_url]] <<input_cluster_oidc_issuer_url,cluster_oidc_issuer_url>>
+|The OIDC issuer URL that is associated with the cluster.
+|`string`
+|n/a
+|yes
+
 |[[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
 |List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
 |`list(any)`
@@ -286,7 +300,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.6"`
+|`"v1.0.1"`
 |no
 
 |[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
