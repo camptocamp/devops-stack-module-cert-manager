@@ -22,6 +22,15 @@ resource "azurerm_role_assignment" "dns_zone_contributor" {
   principal_id         = azurerm_user_assigned_identity.cert_manager.principal_id
 }
 
+resource "azurerm_federated_identity_credential" "cert_manager" {
+  name                = "cert_manager"
+  resource_group_name = data.azurerm_resource_group.node_resource_group.name
+  audience            = ["api://AzureADTokenExchange"]
+  issuer              = var.cluster_oidc_issuer_url
+  parent_id           = azurerm_user_assigned_identity.cert_manager.id
+  subject             = "system:serviceaccount:${var.namespace}:cert-manager"
+}
+
 module "cert-manager" {
   source = "../"
 

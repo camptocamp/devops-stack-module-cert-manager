@@ -23,22 +23,31 @@ locals {
   }
 
   use_default_solvers = {
-    dns01 = var.use_default_dns01_solver
+    dns01  = var.use_default_dns01_solver
     http01 = var.use_default_http01_solver
   }
 
   solvers = concat(
-    [ for each in ["dns01", "http01"] : local.default_solvers[each] if local.use_default_solvers[each] ],
+    [for each in ["dns01", "http01"] : local.default_solvers[each] if local.use_default_solvers[each]],
     var.custom_solver_configurations
   )
 
   helm_values = [{
     cert-manager = {
-      azureIdentity = {
-        resourceID = azurerm_user_assigned_identity.cert_manager.id
-        clientID   = azurerm_user_assigned_identity.cert_manager.client_id
+      # workload identity is suported since 1.11.0. TODO remove the hard-coded tag when upgrading to a chart that runs a cert-manager version higher than 1.11.0.
+      image = {
+        tag = "v1.11.0"
       }
-
+      podLabels = {
+        "azure.workload.identity/use" = "true"
+      }
+      serviceAccount = {
+        create = true
+        name   = "cert-manager"
+        annotations = {
+          "azure.workload.identity/client-id" = azurerm_user_assigned_identity.cert_manager.client_id
+        }
+      }
       clusterIssuers = {
         letsencrypt = {
           enabled = true
@@ -48,9 +57,6 @@ locals {
         }
       }
       replicaCount = 2
-      podLabels = {
-        aadpodidbinding = "cert-manager"
-      }
       resources = {
         limits = {
           memory = "128Mi"
