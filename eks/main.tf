@@ -16,7 +16,7 @@ module "iam_assumable_role_cert_manager" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
   version                       = "4.0.0"
   create_role                   = true
-  number_of_role_policy_arns    = 1
+  number_of_role_policy_arns    = length(local.all_domains)
   role_name                     = format("cert-manager-%s", var.cluster_name)
   provider_url                  = replace(var.cluster_oidc_issuer_url, "https://", "")
   role_policy_arns              = [for domain in local.all_domains : aws_iam_policy.cert_manager[domain].arn]
