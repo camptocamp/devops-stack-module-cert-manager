@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v2.0.0...v2.0.1) (2023-05-09)
+
+
+### Bug Fixes
+
+* **eks:** iam policies for DNS validation with multiple domains ([#45](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/45)) ([2abbccc](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/2abbccc37fb8e0726f89253c199aee4733cdc9cd))
+
 ## [2.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v1.0.1...v2.0.0) (2023-04-13)
 
 
