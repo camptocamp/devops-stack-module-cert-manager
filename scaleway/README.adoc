@@ -77,6 +77,14 @@ Type: `list(any)`
 
 Default: `[]`
 
+==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+
+Description: Enable prometheus ServiceMonitor in helm chart.
+
+Type: `bool`
+
+Default: `true`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm values, passed as a list of HCL structures.
@@ -195,6 +203,12 @@ Description: n/a
 |List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
 |`list(any)`
 |`[]`
+|no
+
+|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+|Enable prometheus ServiceMonitor in helm chart.
+|`bool`
+|`true`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
