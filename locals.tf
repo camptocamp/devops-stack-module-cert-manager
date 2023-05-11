@@ -3,7 +3,7 @@ locals {
     cert-manager = {
       installCRDs     = true
       securityContext = {
-        fsGroup = "999"
+        fsGroup = 999
       }
       prometheus = {
         servicemonitor = {
