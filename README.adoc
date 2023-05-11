@@ -5,11 +5,11 @@
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>>
+- [[provider_utils]] <<provider_utils,utils>>
 
 - [[provider_argocd]] <<provider_argocd,argocd>>
 
-- [[provider_utils]] <<provider_utils,utils>>
+- [[provider_null]] <<provider_null,null>>
 
 === Resources
 
@@ -53,7 +53,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.0.0"`
+Default: `"v2.0.1"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -202,7 +202,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.0.0"`
+|`"v2.0.1"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
