@@ -92,7 +92,7 @@ Default: `[]`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
-Description: Enable prometheus ServiceMonitor in helm chart.
+Description: Enable Prometheus ServiceMonitor in the Helm chart.
 
 Type: `bool`
 
@@ -236,7 +236,7 @@ Description: n/a
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
-|Enable prometheus ServiceMonitor in helm chart.
+|Enable Prometheus ServiceMonitor in the Helm chart.
 |`bool`
 |`true`
 |no
