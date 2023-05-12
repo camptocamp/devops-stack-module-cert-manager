@@ -27,6 +27,8 @@ module "cert-manager" {
   base_domain      = var.base_domain
   argocd_namespace = var.argocd_namespace
 
+  enable_service_monitor = var.enable_service_monitor
+
   namespace       = var.namespace
   target_revision = var.target_revision
   app_autosync    = var.app_autosync
