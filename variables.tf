@@ -46,7 +46,7 @@ variable "custom_solver_configurations" {
 }
 
 variable "enable_service_monitor" {
-  description = "Enable prometheus ServiceMonitor in helm chart."
+  description = "Enable Prometheus ServiceMonitor in the Helm chart."
   type        = bool
   default     = true
 }
