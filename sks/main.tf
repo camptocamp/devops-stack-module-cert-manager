@@ -3,11 +3,11 @@ module "cert-manager" {
 
   argocd_namespace = var.argocd_namespace
 
+  target_revision        = var.target_revision
+  namespace              = var.namespace
   enable_service_monitor = var.enable_service_monitor
-
-  namespace       = var.namespace
-  target_revision = var.target_revision
-  app_autosync    = var.app_autosync
+  deep_merge_append_list = var.deep_merge_append_list
+  app_autosync           = var.app_autosync
 
   helm_values = concat(local.helm_values, var.helm_values)
 
