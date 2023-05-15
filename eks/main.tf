@@ -77,10 +77,9 @@ module "cert-manager" {
 
   argocd_namespace = var.argocd_namespace
 
-  enable_service_monitor = var.enable_service_monitor
-
-  namespace              = var.namespace
   target_revision        = var.target_revision
+  namespace              = var.namespace
+  enable_service_monitor = var.enable_service_monitor
   deep_merge_append_list = var.deep_merge_append_list
   app_autosync           = var.app_autosync
 
