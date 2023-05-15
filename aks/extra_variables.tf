@@ -1,3 +1,13 @@
+variable "cluster_name" {
+  description = "The name of the Kubernetes cluster to create."
+  type        = string
+}
+
+variable "base_domain" {
+  description = "The base domain used for Ingresses."
+  type        = string
+}
+
 variable "node_resource_group_name" {
   description = "The managed AKS resource group name."
   type        = string

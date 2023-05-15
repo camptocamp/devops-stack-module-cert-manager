@@ -23,8 +23,6 @@ resource "tls_self_signed_cert" "root" {
 module "cert-manager" {
   source = "../"
 
-  cluster_name     = var.cluster_name
-  base_domain      = var.base_domain
   argocd_namespace = var.argocd_namespace
 
   enable_service_monitor = var.enable_service_monitor
