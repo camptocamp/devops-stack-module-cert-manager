@@ -1,7 +1,7 @@
 locals {
   helm_values = [{
     cert-manager = {
-      installCRDs     = true
+      installCRDs = true
       securityContext = {
         fsGroup = 999
       }
@@ -14,11 +14,11 @@ locals {
     letsencrypt = {
       issuers = {
         letsencrypt-prod = {
-          email = "letsencrypt@camptocamp.com"
+          email  = "letsencrypt@camptocamp.com"
           server = "https://acme-v02.api.letsencrypt.org/directory"
         }
         letsencrypt-staging = {
-          email = "letsencrypt@camptocamp.com"
+          email  = "letsencrypt@camptocamp.com"
           server = "https://acme-staging-v02.api.letsencrypt.org/directory"
         }
       }
