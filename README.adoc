@@ -7,9 +7,9 @@ The following providers are used by this module:
 
 - [[provider_null]] <<provider_null,null>>
 
-- [[provider_argocd]] <<provider_argocd,argocd>>
-
 - [[provider_utils]] <<provider_utils,utils>>
+
+- [[provider_argocd]] <<provider_argocd,argocd>>
 
 === Resources
 
@@ -53,7 +53,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.0.0"`
+Default: `"v2.0.1"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -86,6 +86,14 @@ Description: List of additional solver configurations, appended to the default d
 Type: `list(any)`
 
 Default: `[]`
+
+==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+
+Description: Enable Prometheus ServiceMonitor in the Helm chart.
+
+Type: `bool`
+
+Default: `true`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -194,7 +202,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.0.0"`
+|`"v2.0.1"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -219,6 +227,12 @@ Description: n/a
 |List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
 |`list(any)`
 |`[]`
+|no
+
+|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+|Enable Prometheus ServiceMonitor in the Helm chart.
+|`bool`
+|`true`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>

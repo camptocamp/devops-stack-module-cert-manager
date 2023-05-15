@@ -45,6 +45,12 @@ variable "custom_solver_configurations" {
   default     = []
 }
 
+variable "enable_service_monitor" {
+  description = "Enable Prometheus ServiceMonitor in the Helm chart."
+  type        = bool
+  default     = true
+}
+
 variable "helm_values" {
   description = "Helm values, passed as a list of HCL structures."
   type        = any
