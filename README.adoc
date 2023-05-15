@@ -1,5 +1,25 @@
-// BEGIN_TF_DOCS
+= devops-stack-module-cert-manager
+// Document attributes to replace along the document
+:chart-version: 1.11.2
+:chart-url: https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager
 
+A https://devops-stack.io[DevOps Stack] module for installing and configuring https://cert-manager.io/[cert-manager].
+
+The cert-manager chart used by this module is shipped in this repository as well, in order to avoid any unwanted behaviors caused by unsupported versions. 
+
+[cols="1,1,1",options="autowidth,header"]
+|===
+|Current Chart Version |Original Repository |Default Values
+|*{chart-version}* |{chart-url}[Chart] |https://artifacthub.io/packages/helm/cert-manager/cert-manager/{chart-version}?modal=values[`values.yaml`]
+|===
+
+*Since this module is meant to be instantiated using its variants, the usage documentation is available in each variant* ( xref:./aks/README.adoc[AKS] | xref:./eks/README.adoc[EKS] | xref:./kind/README.adoc[KinD] | xref:./sks/README.adoc[SKS] ).
+
+Below you will only find the technical reference automatically generated from the `*.tf` files on the root module.
+
+== Technical Documentation
+
+// BEGIN_TF_DOCS
 
 === Providers
 
@@ -150,6 +170,12 @@ The following outputs are exported:
 ==== [[output_id]] <<output_id,id>>
 
 Description: n/a
+
+=== Reference in table format 
+
+.Show tables
+[%collapsible]
+====
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 
@@ -289,3 +315,4 @@ object({
 |[[output_id]] <<output_id,id>> |n/a
 |===
 // END_TF_TABLES
+====
