@@ -2,18 +2,9 @@
 ## Standard variables
 #######################
 
-variable "cluster_name" {
-  type = string
-}
-
-variable "base_domain" {
-  description = "Principal default domain"
-  type        = string
-}
-
-
 variable "argocd_namespace" {
-  type = string
+  description = "Namespace used by Argo CD where the Application and AppProject resources should be created."
+  type        = string
 }
 
 variable "target_revision" {
@@ -23,8 +14,9 @@ variable "target_revision" {
 }
 
 variable "namespace" {
-  type    = string
-  default = "cert-manager"
+  description = "Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist."
+  type        = string
+  default     = "cert-manager"
 }
 
 variable "use_default_dns01_solver" {
@@ -57,12 +49,6 @@ variable "helm_values" {
   default     = []
 }
 
-variable "dependency_ids" {
-  type = map(string)
-
-  default = {}
-}
-
 variable "app_autosync" {
   description = "Automated sync options for the Argo CD Application resource."
   type = object({
@@ -75,6 +61,12 @@ variable "app_autosync" {
     prune       = true
     self_heal   = true
   }
+}
+
+variable "dependency_ids" {
+  type = map(string)
+
+  default = {}
 }
 
 variable "deep_merge_append_list" {
