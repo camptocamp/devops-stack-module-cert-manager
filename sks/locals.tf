@@ -13,7 +13,7 @@ locals {
   }
 
   solvers = concat(
-    [ for each in ["http01"] : local.default_solvers[each] if local.use_default_solvers[each] ],
+    [for each in ["http01"] : local.default_solvers[each] if local.use_default_solvers[each]],
     var.custom_solver_configurations
   )
 

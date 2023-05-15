@@ -21,12 +21,12 @@ locals {
   }
 
   use_default_solvers = {
-    dns01 = var.use_default_dns01_solver
+    dns01  = var.use_default_dns01_solver
     http01 = var.use_default_http01_solver
   }
 
   solvers = concat(
-    [ for each in ["dns01", "http01"] : local.default_solvers[each] if local.use_default_solvers[each] ],
+    [for each in ["dns01", "http01"] : local.default_solvers[each] if local.use_default_solvers[each]],
     var.custom_solver_configurations
   )
 

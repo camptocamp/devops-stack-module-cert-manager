@@ -70,9 +70,9 @@ variable "app_autosync" {
 }
 
 variable "dependency_ids" {
-  type = map(string)
-
-  default = {}
+  description = "IDs of the other modules on which this module depends on."
+  type        = map(string)
+  default     = {}
 }
 
 #######################
