@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v2.0.1...v3.0.0) (2023-05-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove ServiceMonitor CRD ([#46](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/46))
+
+### Features
+
+* remove ServiceMonitor CRD ([#46](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/46)) ([e056c68](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/e056c6898465f0db584eb792a7ad69306a37d401))
+
 ## [2.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v2.0.0...v2.0.1) (2023-05-09)
 
 
