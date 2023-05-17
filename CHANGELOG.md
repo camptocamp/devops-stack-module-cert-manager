@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v3.0.0...v3.1.0) (2023-05-17)
+
+
+### Features
+
+* **chart:** upgrade chart to v1.11.2 ([0db0ea6](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/0db0ea60af96a4175737eca7255ca3a156198bd8))
+
+
+### Bug Fixes
+
+* point id to the right id and add description to outputs ([2f59926](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/2f599261dcf3c88334c6f278141dd801fb428749))
+* remove global variables and limit scope to required variants ([02125d6](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/02125d6b3066aae5b9ba5a198cbfb391dd14274f))
+
 ## [3.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v2.0.1...v3.0.0) (2023-05-15)
 
 
