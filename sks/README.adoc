@@ -1,5 +1,11 @@
 // BEGIN_TF_DOCS
+=== Requirements
 
+The following requirements are needed by this module:
+
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 4)
+
+- [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
 === Modules
 
@@ -21,21 +27,9 @@ Description: SKS Node Pool ID for router nodes
 
 Type: `string`
 
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: n/a
-
-Type: `string`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: Principal default domain
-
-Type: `string`
-
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
-Description: n/a
+Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
 
 Type: `string`
 
@@ -49,11 +43,11 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.0.1"`
+Default: `"v3.0.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
-Description: n/a
+Description: Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
 
 Type: `string`
 
@@ -99,13 +93,13 @@ Type: `any`
 
 Default: `[]`
 
-==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
+==== [[input_deep_merge_append_list]] <<input_deep_merge_append_list,deep_merge_append_list>>
 
-Description: n/a
+Description: A boolean flag to enable/disable appending lists instead of overwriting them.
 
-Type: `map(string)`
+Type: `bool`
 
-Default: `{}`
+Default: `false`
 
 ==== [[input_app_autosync]] <<input_app_autosync,app_autosync>>
 
@@ -131,13 +125,13 @@ Default:
 }
 ----
 
-==== [[input_deep_merge_append_list]] <<input_deep_merge_append_list,deep_merge_append_list>>
+==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
-Description: A boolean flag to enable/disable appending lists instead of overwriting them.
+Description: IDs of the other modules on which this module depends on.
 
-Type: `bool`
+Type: `map(string)`
 
-Default: `false`
+Default: `{}`
 
 === Outputs
 
@@ -145,10 +139,17 @@ The following outputs are exported:
 
 ==== [[output_id]] <<output_id,id>>
 
-Description: n/a
+Description: ID to pass other modules in order to refer to this module as a dependency.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
+= Requirements
 
+[cols="a,a",options="header,autowidth"]
+|===
+|Name |Version
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
+|[[requirement_utils]] <<requirement_utils,utils>> |>= 1
+|===
 
 = Modules
 
@@ -169,20 +170,8 @@ Description: n/a
 |n/a
 |yes
 
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|n/a
-|`string`
-|n/a
-|yes
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|Principal default domain
-|`string`
-|n/a
-|yes
-
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-|n/a
+|Namespace used by Argo CD where the Application and AppProject resources should be created.
 |`string`
 |n/a
 |yes
@@ -190,11 +179,11 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.0.1"`
+|`"v3.0.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
-|n/a
+|Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
 |`string`
 |`"cert-manager"`
 |no
@@ -229,10 +218,10 @@ Description: n/a
 |`[]`
 |no
 
-|[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
-|n/a
-|`map(string)`
-|`{}`
+|[[input_deep_merge_append_list]] <<input_deep_merge_append_list,deep_merge_append_list>>
+|A boolean flag to enable/disable appending lists instead of overwriting them.
+|`bool`
+|`false`
 |no
 
 |[[input_app_autosync]] <<input_app_autosync,app_autosync>>
@@ -261,10 +250,10 @@ object({
 
 |no
 
-|[[input_deep_merge_append_list]] <<input_deep_merge_append_list,deep_merge_append_list>>
-|A boolean flag to enable/disable appending lists instead of overwriting them.
-|`bool`
-|`false`
+|[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
+|IDs of the other modules on which this module depends on.
+|`map(string)`
+|`{}`
 |no
 
 |===
@@ -274,6 +263,6 @@ object({
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
-|[[output_id]] <<output_id,id>> |n/a
+|[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
 |===
 // END_TF_TABLES
