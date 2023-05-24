@@ -1,6 +1,6 @@
 ---
 name: "cert-manager"
-title: "Cert-manager Module"
+title: "cert-manager Module"
 version: true
 start_page: README.adoc
 nav:

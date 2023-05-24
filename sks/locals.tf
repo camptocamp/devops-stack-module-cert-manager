@@ -1,5 +1,4 @@
 locals {
-
   default_solvers = {
     http01 = {
       http01 = {
@@ -25,64 +24,6 @@ locals {
         }
         acme = {
           solvers = local.solvers
-        }
-      }
-      affinity = {
-        nodeAffinity = {
-          preferredDuringSchedulingIgnoredDuringExecution = [
-            {
-              weight = 100
-              preference = {
-                matchExpressions = [
-                  {
-                    key      = "node.exoscale.net/nodepool-id"
-                    operator = "NotIn"
-                    values   = [var.router_pool_id]
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      }
-      cainjector = {
-        affinity = {
-          nodeAffinity = {
-            preferredDuringSchedulingIgnoredDuringExecution = [
-              {
-                weight = 100
-                preference = {
-                  matchExpressions = [
-                    {
-                      key      = "node.exoscale.net/nodepool-id"
-                      operator = "NotIn"
-                      values   = [var.router_pool_id]
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-      webhook = {
-        affinity = {
-          nodeAffinity = {
-            preferredDuringSchedulingIgnoredDuringExecution = [
-              {
-                weight = 100
-                preference = {
-                  matchExpressions = [
-                    {
-                      key      = "node.exoscale.net/nodepool-id"
-                      operator = "NotIn"
-                      values   = [var.router_pool_id]
-                    }
-                  ]
-                }
-              }
-            ]
-          }
         }
       }
     }
