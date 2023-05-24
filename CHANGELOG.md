@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v3.1.0...v4.0.0) (2023-05-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sks:** remove nodeAffinity config for SKS clusters ([#51](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/51))
+
+### Bug Fixes
+
+* **sks:** remove nodeAffinity config for SKS clusters ([#51](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/51)) ([2805c68](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/2805c688d626cee32a53a2dba0424e754999aeb3))
+
 ## [3.1.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v3.0.0...v3.1.0) (2023-05-17)
 
 
