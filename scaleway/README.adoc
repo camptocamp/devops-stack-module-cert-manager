@@ -5,6 +5,8 @@ The following requirements are needed by this module:
 
 - [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 4)
 
+- [[requirement_null]] <<requirement_null,null>> (>= 3)
+
 - [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
 === Modules
@@ -17,9 +19,9 @@ Source: ../self-signed/
 
 Version:
 
-=== Required Inputs
+=== Optional Inputs
 
-The following input variables are required:
+The following input variables are optional (have default values):
 
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
@@ -27,9 +29,7 @@ Description: Namespace used by Argo CD where the Application and AppProject reso
 
 Type: `string`
 
-=== Optional Inputs
-
-The following input variables are optional (have default values):
+Default: `"argocd"`
 
 ==== [[input_target_revision]] <<input_target_revision,target_revision>>
 
@@ -46,30 +46,6 @@ Description: Namespace where the applications's Kubernetes resources should be c
 Type: `string`
 
 Default: `"cert-manager"`
-
-==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
-
-Description: Whether to use the default dns01 solver configuration.
-
-Type: `bool`
-
-Default: `true`
-
-==== [[input_use_default_http01_solver]] <<input_use_default_http01_solver,use_default_http01_solver>>
-
-Description: Whether to use the default http01 solver configuration.
-
-Type: `bool`
-
-Default: `true`
-
-==== [[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
-
-Description: List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
-
-Type: `list(any)`
-
-Default: `[]`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -127,6 +103,30 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
+
+Description: Whether to use the default dns01 solver configuration.
+
+Type: `bool`
+
+Default: `true`
+
+==== [[input_use_default_http01_solver]] <<input_use_default_http01_solver,use_default_http01_solver>>
+
+Description: Whether to use the default http01 solver configuration.
+
+Type: `bool`
+
+Default: `true`
+
+==== [[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
+
+Description: List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
+
+Type: `list(any)`
+
+Default: `[]`
+
 === Outputs
 
 The following outputs are exported:
@@ -142,6 +142,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |===
 |Name |Version
 |[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
+|[[requirement_null]] <<requirement_null,null>> |>= 3
 |[[requirement_utils]] <<requirement_utils,utils>> |>= 1
 |===
 
@@ -161,8 +162,8 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |Namespace used by Argo CD where the Application and AppProject resources should be created.
 |`string`
-|n/a
-|yes
+|`"argocd"`
+|no
 
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
@@ -174,24 +175,6 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
 |`string`
 |`"cert-manager"`
-|no
-
-|[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
-|Whether to use the default dns01 solver configuration.
-|`bool`
-|`true`
-|no
-
-|[[input_use_default_http01_solver]] <<input_use_default_http01_solver,use_default_http01_solver>>
-|Whether to use the default http01 solver configuration.
-|`bool`
-|`true`
-|no
-
-|[[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
-|List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
-|`list(any)`
-|`[]`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
@@ -242,6 +225,24 @@ object({
 |IDs of the other modules on which this module depends on.
 |`map(string)`
 |`{}`
+|no
+
+|[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
+|Whether to use the default dns01 solver configuration.
+|`bool`
+|`true`
+|no
+
+|[[input_use_default_http01_solver]] <<input_use_default_http01_solver,use_default_http01_solver>>
+|Whether to use the default http01 solver configuration.
+|`bool`
+|`true`
+|no
+
+|[[input_custom_solver_configurations]] <<input_custom_solver_configurations,custom_solver_configurations>>
+|List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled).
+|`list(any)`
+|`[]`
 |no
 
 |===
