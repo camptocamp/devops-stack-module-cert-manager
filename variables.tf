@@ -5,6 +5,7 @@
 variable "argocd_namespace" {
   description = "Namespace used by Argo CD where the Application and AppProject resources should be created."
   type        = string
+  default     = "argocd"
 }
 
 variable "target_revision" {
@@ -17,24 +18,6 @@ variable "namespace" {
   description = "Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist."
   type        = string
   default     = "cert-manager"
-}
-
-variable "use_default_dns01_solver" {
-  description = "Whether to use the default dns01 solver configuration."
-  type        = bool
-  default     = true
-}
-
-variable "use_default_http01_solver" {
-  description = "Whether to use the default http01 solver configuration."
-  type        = bool
-  default     = true
-}
-
-variable "custom_solver_configurations" {
-  description = "List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled)."
-  type        = list(any)
-  default     = []
 }
 
 variable "enable_service_monitor" {
@@ -78,3 +61,21 @@ variable "dependency_ids" {
 #######################
 ## Module variables
 #######################
+
+variable "use_default_dns01_solver" {
+  description = "Whether to use the default dns01 solver configuration."
+  type        = bool
+  default     = true
+}
+
+variable "use_default_http01_solver" {
+  description = "Whether to use the default http01 solver configuration."
+  type        = bool
+  default     = true
+}
+
+variable "custom_solver_configurations" {
+  description = "List of additional solver configurations, appended to the default dns01 and http01 solvers (if enabled)."
+  type        = list(any)
+  default     = []
+}
