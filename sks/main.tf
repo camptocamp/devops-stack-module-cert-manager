@@ -1,5 +1,5 @@
 module "cert-manager" {
-  source = "../self-signed/"
+  source = "../"
 
   argocd_namespace = var.argocd_namespace
 
