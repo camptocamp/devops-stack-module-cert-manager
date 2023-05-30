@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.0...v4.0.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* use main module instead of the self-signed one ([#54](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/54)) ([d0d7297](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/d0d7297bb1260016753ee4bbc4ddf3c581bee8ac))
+
 ## [4.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v3.1.0...v4.0.0) (2023-05-24)
 
 
