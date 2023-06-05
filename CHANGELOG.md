@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.1...v4.0.2) (2023-06-05)
+
+
+### Bug Fixes
+
+* add missing provider ([a33a168](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/a33a1683e0542fc5d2e72d8ec40bf2b12e0a1536))
+
 ## [4.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.0...v4.0.1) (2023-05-30)
 
 
