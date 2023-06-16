@@ -13,7 +13,7 @@ The cert-manager chart used by this module is shipped in this repository as well
 |*{chart-version}* |{chart-url}[Chart] |https://artifacthub.io/packages/helm/cert-manager/cert-manager/{chart-version}?modal=values[`values.yaml`]
 |===
 
-*Since this module is meant to be instantiated using its variants, the usage documentation is available in each variant* ( xref:./aks/README.adoc[AKS] | xref:./eks/README.adoc[EKS] | xref:./kind/README.adoc[KinD] | xref:./sks/README.adoc[SKS] ).
+*Since this module is meant to be instantiated using its variants, the usage documentation is available in each variant* ( xref:./aks/README.adoc[AKS] | xref:./eks/README.adoc[EKS] | xref:./scaleway/README.adoc[Scaleway] | xref:./self-signed/README.adoc[Self-signed] | xref:./sks/README.adoc[SKS] ).
 
 Below you will only find the technical reference automatically generated from the `*.tf` files on the root module.
 
@@ -68,7 +68,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v4.0.1"`
+Default: `"v4.0.2"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -166,6 +166,12 @@ The following outputs are exported:
 
 Description: ID to pass other modules in order to refer to this module as a dependency.
 // END_TF_DOCS
+
+=== Reference in table format 
+
+.Show tables
+[%collapsible]
+====
 // BEGIN_TF_TABLES
 = Requirements
 
@@ -213,7 +219,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v4.0.1"`
+|`"v4.0.2"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
