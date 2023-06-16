@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.3](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.2...v4.0.3) (2023-06-16)
+
+
+### Documentation
+
+* fix the collapsible table and correct links on README.adoc ([#57](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/57)) ([ddc8e37](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/ddc8e37670d478b2189a375a016bb2e51dfbb63c))
+
 ## [4.0.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.1...v4.0.2) (2023-06-05)
 
 
