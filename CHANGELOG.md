@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.3...v5.0.0) (2023-07-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* add support to oboukili/argocd v5 ([#59](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/59))
+
+### Features
+
+* add support to oboukili/argocd v5 ([#59](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/59)) ([dc00ece](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/dc00ecea08222492d8777f98eef38971595a4fe7))
+
 ## [4.0.3](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.2...v4.0.3) (2023-06-16)
 
 
