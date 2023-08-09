@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.0.0...v5.0.1) (2023-08-09)
+
+
+### Bug Fixes
+
+* readd support to deactivate auto-sync which was broken by [#59](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/59) ([d412334](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/d412334ab0e1f7d6903d2b0a348e4f3c0dd26d20))
+
 ## [5.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v4.0.3...v5.0.0) (2023-07-11)
 
 
