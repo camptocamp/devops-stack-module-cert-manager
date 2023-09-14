@@ -1,8 +1,9 @@
 module "cert-manager" {
   source = "../"
 
-  argocd_namespace = var.argocd_namespace
-
+  argocd_namespace       = var.argocd_namespace
+  argocd_project         = var.argocd_project
+  destination_cluster    = var.destination_cluster
   target_revision        = var.target_revision
   namespace              = var.namespace
   enable_service_monitor = var.enable_service_monitor
