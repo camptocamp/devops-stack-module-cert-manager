@@ -47,6 +47,10 @@ resource "argocd_application" "this" {
   metadata {
     name      = var.destination_cluster != "in-cluster" ? "cert-manager-${var.destination_cluster}" : "cert-manager"
     namespace = var.argocd_namespace
+    labels = merge({
+      "application" = "cert-manager"
+      "cluster"     = var.destination_cluster
+    }, var.argocd_labels)
   }
 
   wait = var.app_autosync == { "allow_empty" = tobool(null), "prune" = tobool(null), "self_heal" = tobool(null) } ? false : true
