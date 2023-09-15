@@ -36,9 +36,9 @@ The following providers are used by this module:
 
 - [[provider_null]] <<provider_null,null>> (>= 3)
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
-
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
+
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
 
 === Resources
 
@@ -69,6 +69,14 @@ Description: Name of the Argo CD AppProject where the Application should be crea
 Type: `string`
 
 Default: `null`
+
+==== [[input_argocd_labels]] <<input_argocd_labels,argocd_labels>>
+
+Description: Labels to attach to the Argo CD Application resource.
+
+Type: `map(string)`
+
+Default: `{}`
 
 ==== [[input_destination_cluster]] <<input_destination_cluster,destination_cluster>>
 
@@ -204,9 +212,9 @@ Description: ID to pass other modules in order to refer to this module as a depe
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
 |[[provider_null]] <<provider_null,null>> |>= 3
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |===
 
 = Resources
@@ -236,6 +244,12 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
 |`string`
 |`null`
+|no
+
+|[[input_argocd_labels]] <<input_argocd_labels,argocd_labels>>
+|Labels to attach to the Argo CD Application resource.
+|`map(string)`
+|`{}`
 |no
 
 |[[input_destination_cluster]] <<input_destination_cluster,destination_cluster>>
