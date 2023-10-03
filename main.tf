@@ -70,7 +70,7 @@ resource "argocd_application" "this" {
       group         = "admissionregistration.k8s.io"
       kind          = "ValidatingWebhookConfiguration"
       name          = "cert-manager-webhook"
-      json_pointers = ["/webhooks/0/namespaceSelector/matchExpressions/2"]
+      json_pointers = ["/webhooks/0/namespaceSelector/matchExpressions"]
     }
 
     sync_policy {
