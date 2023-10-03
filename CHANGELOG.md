@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.2.0...v5.2.1) (2023-10-03)
+
+
+### Bug Fixes
+
+* **argocd-app:** webhook issue ([#69](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/69)) ([77561d7](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/77561d73c6ddddf0e27c6d0c7ffcef97e90d4006))
+
 ## [5.2.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.1.0...v5.2.0) (2023-09-07)
 
 
