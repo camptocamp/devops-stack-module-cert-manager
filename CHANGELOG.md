@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.3.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.2.1...v5.3.0) (2023-10-19)
+
+
+### Features
+
+* add standard variables and variable to add labels to Argo CD app ([d91c418](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/d91c418d3c9056c16c407f3f38dd3a0f71ecb222))
+* add variables to set AppProject and destination cluster ([54ea559](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/54ea559cf6f354a2b601e78d58ad76ed5b042240))
+
+
+### Bug Fixes
+
+* **aks:** fix the webhook ignore_differences to use new naming scheme ([a7dd9da](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/a7dd9dac438bce17535f2f46bce5352199ecd16e))
+
 ## [5.2.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.2.0...v5.2.1) (2023-10-03)
 
 
