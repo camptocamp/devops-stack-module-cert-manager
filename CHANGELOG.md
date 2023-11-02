@@ -1,5 +1,18 @@
 # Changelog
 
+## [6.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.3.0...v6.0.0) (2023-11-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **chart:** minor update of dependencies on cert-manager chart ([#67](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/67)): 
+
+  - [v1.13.0](https://github.com/cert-manager/cert-manager/releases/tag/v1.13.0) - this version introduced a potential breaking change; although these changes do not affect our module's code directly, please note that **if someone is overloading the helm_values` variable and has set the `.featureGates value, they could be affected by this release**.
+
+### Features
+
+* **chart:** minor update of dependencies on cert-manager chart ([#67](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/67)) ([3a97637](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/3a97637c69882380da75407118e502ea497dbb5d))
+
 ## [5.3.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.2.1...v5.3.0) (2023-10-19)
 
 
