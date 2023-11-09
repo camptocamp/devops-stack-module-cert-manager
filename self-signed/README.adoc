@@ -171,6 +171,10 @@ The following outputs are exported:
 ==== [[output_id]] <<output_id,id>>
 
 Description: ID to pass other modules in order to refer to this module as a dependency.
+
+==== [[output_issuers]] <<output_issuers,issuers>>
+
+Description: List of issuers created by cert-manager
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 = Requirements
@@ -325,5 +329,6 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
+|[[output_issuers]] <<output_issuers,issuers>> |List of issuers created by cert-manager
 |===
 // END_TF_TABLES
