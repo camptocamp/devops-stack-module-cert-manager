@@ -20,7 +20,6 @@ resource "tls_self_signed_cert" "root" {
   is_ca_certificate = true
 }
 
-
 module "cert-manager" {
   source = "../"
 
@@ -35,6 +34,8 @@ module "cert-manager" {
   app_autosync           = var.app_autosync
 
   helm_values = concat(local.helm_values, var.helm_values)
+
+  letsencrypt_issuer_email = var.letsencrypt_issuer_email
 
   dependency_ids = var.dependency_ids
 }
