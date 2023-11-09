@@ -34,11 +34,11 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
+- [[provider_null]] <<provider_null,null>> (>= 3)
+
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
-
-- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
@@ -158,6 +158,14 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
+
+Description: Email address used to register with Let's Encrypt.
+
+Type: `string`
+
+Default: `"letsencrypt@example.org"`
+
 ==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 
 Description: Whether to use the default dns01 solver configuration.
@@ -190,9 +198,9 @@ The following outputs are exported:
 
 Description: ID to pass other modules in order to refer to this module as a dependency.
 
-==== [[output_issuers]] <<output_issuers,issuers>>
+==== [[output_cluster_issuers]] <<output_cluster_issuers,cluster_issuers>>
 
-Description: List of issuers created by cert-manager
+Description: List of cluster issuers created by cert-manager.
 // END_TF_DOCS
 
 === Reference in table format 
@@ -216,9 +224,9 @@ Description: List of issuers created by cert-manager
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
+|[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
 = Resources
@@ -324,6 +332,12 @@ object({
 |`{}`
 |no
 
+|[[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
+|Email address used to register with Let's Encrypt.
+|`string`
+|`"letsencrypt@example.org"`
+|no
+
 |[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 |Whether to use the default dns01 solver configuration.
 |`bool`
@@ -350,7 +364,7 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
-|[[output_issuers]] <<output_issuers,issuers>> |List of issuers created by cert-manager
+|[[output_cluster_issuers]] <<output_cluster_issuers,cluster_issuers>> |List of cluster issuers created by cert-manager.
 |===
 // END_TF_TABLES
 ====
