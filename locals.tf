@@ -1,7 +1,7 @@
 locals {
   issuers = {
     letsencrypt = {
-      prod = {
+      production = {
         name   = "letsencrypt-prod"
         email  = "letsencrypt@camptocamp.com"
         server = "https://acme-v02.api.letsencrypt.org/directory"

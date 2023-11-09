@@ -3,7 +3,15 @@ output "id" {
   value       = resource.null_resource.this.id
 }
 
-output "issuers" {
-  description = "List of issuers created by cert-manager"
-  value       = local.issuers
+output "cluster_issuers" {
+  description = "List of cluster issuers created by cert-manager."
+  value = merge({
+    default = "selfsigned-issuer"
+    }, {
+    for issuer_id, issuer in { ca = "ca-issuer" } : issuer_id => issuer
+    if can(var.helm_values[0].cert-manager.tlsCrt) && can(var.helm_values[0].cert-manager.tlsKey)
+    }, {
+    for issuer_id, issuer in local.issuers.letsencrypt : issuer_id => issuer.name
+    if var.helm_values[0].cert-manager.clusterIssuers.letsencrypt.enabled
+  })
 }
