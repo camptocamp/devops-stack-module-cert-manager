@@ -3,12 +3,12 @@ locals {
     letsencrypt = {
       production = {
         name   = "letsencrypt-prod"
-        email  = "letsencrypt@camptocamp.com"
+        email  = var.letsencrypt_issuer_email
         server = "https://acme-v02.api.letsencrypt.org/directory"
       }
       staging = {
         name   = "letsencrypt-staging"
-        email  = "letsencrypt@camptocamp.com"
+        email  = var.letsencrypt_issuer_email
         server = "https://acme-staging-v02.api.letsencrypt.org/directory"
       }
     }

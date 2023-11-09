@@ -80,6 +80,12 @@ variable "dependency_ids" {
 ## Module variables
 #######################
 
+variable "letsencrypt_issuer_email" {
+  description = "Email address used to register with Let's Encrypt."
+  type        = string
+  default     = "letsencrypt@example.org"
+}
+
 variable "use_default_dns01_solver" {
   description = "Whether to use the default dns01 solver configuration."
   type        = bool
