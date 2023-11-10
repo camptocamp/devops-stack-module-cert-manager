@@ -34,11 +34,11 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
-
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
+
+- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
@@ -49,16 +49,6 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] (data source)
-
-=== Required Inputs
-
-The following input variables are required:
-
-==== [[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
-
-Description: Email address used to register with Let's Encrypt.
-
-Type: `string`
 
 === Optional Inputs
 
@@ -167,6 +157,14 @@ Description: IDs of the other modules on which this module depends on.
 Type: `map(string)`
 
 Default: `{}`
+
+==== [[input_letsencrypt_issuer_email_main]] <<input_letsencrypt_issuer_email_main,letsencrypt_issuer_email_main>>
+
+Description: E-mail address used to register with Let's Encrypt.
+
+Type: `string`
+
+Default: `null`
 
 ==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 
@@ -334,11 +332,11 @@ object({
 |`{}`
 |no
 
-|[[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
-|Email address used to register with Let's Encrypt.
+|[[input_letsencrypt_issuer_email_main]] <<input_letsencrypt_issuer_email_main,letsencrypt_issuer_email_main>>
+|E-mail address used to register with Let's Encrypt.
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 |Whether to use the default dns01 solver configuration.
