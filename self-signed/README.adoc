@@ -32,6 +32,16 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key[tls_private_key.root] (resource)
 - https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert[tls_self_signed_cert.root] (resource)
 
+=== Required Inputs
+
+The following input variables are required:
+
+==== [[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
+
+Description: Email address used to register with Let's Encrypt.
+
+Type: `string`
+
 === Optional Inputs
 
 The following input variables are optional (have default values):
@@ -171,6 +181,14 @@ The following outputs are exported:
 ==== [[output_id]] <<output_id,id>>
 
 Description: ID to pass other modules in order to refer to this module as a dependency.
+
+==== [[output_cluster_issuers]] <<output_cluster_issuers,cluster_issuers>>
+
+Description: List of cluster issuers created by cert-manager.
+
+==== [[output_ca_issuer_certificate]] <<output_ca_issuer_certificate,ca_issuer_certificate>>
+
+Description: The CA certificate used by the `ca-issuer`. You can copy this value into a `*.pem` file and use it as a CA certificate in your browser to avoid having insecure warnings.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 = Requirements
@@ -299,6 +317,12 @@ object({
 |`{}`
 |no
 
+|[[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
+|Email address used to register with Let's Encrypt.
+|`string`
+|n/a
+|yes
+
 |[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 |Whether to use the default dns01 solver configuration.
 |`bool`
@@ -325,5 +349,7 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
+|[[output_cluster_issuers]] <<output_cluster_issuers,cluster_issuers>> |List of cluster issuers created by cert-manager.
+|[[output_ca_issuer_certificate]] <<output_ca_issuer_certificate,ca_issuer_certificate>> |The CA certificate used by the `ca-issuer`. You can copy this value into a `*.pem` file and use it as a CA certificate in your browser to avoid having insecure warnings.
 |===
 // END_TF_TABLES
