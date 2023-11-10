@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v7.0.0...v7.0.1) (2023-11-10)
+
+
+### Bug Fixes
+
+* remove the need to set the Let's Encrypt e-mail when self-signed ([#77](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/77)) ([93efa4f](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/93efa4f1c2f4fa391cf87b0608388955573fc290))
+
 ## [7.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v6.0.0...v7.0.0) (2023-11-10)
 
 
