@@ -1,5 +1,11 @@
 locals {
   issuers = {
+    default = {
+      name = "selfsigned-issuer"
+    }
+    ca = { # This value is only used when using the self-signed variant.
+      name = "ca-issuer"
+    }
     letsencrypt = {
       production = {
         name   = "letsencrypt-prod"
@@ -26,8 +32,10 @@ locals {
         }
       }
     }
-    letsencrypt = {
-      issuers = { for issuer_id, issuer in local.issuers.letsencrypt :
+    issuers = {
+      default = local.issuers.default
+      ca      = local.issuers.ca
+      letsencrypt = { for issuer_id, issuer in local.issuers.letsencrypt :
         issuer.name => {
           email  = issuer.email
           server = issuer.server
