@@ -5,7 +5,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* remove our company mail from the Let's Encrypt issuer
+* remove our company mail from the Let's Encrypt issuer - we removed the e-mail that was hardcoded and added a new variable, called `letsencrypt_issuer_email`, that has no default value and is absolutely **required** on the module instantiation.
 
 ### Features
 
