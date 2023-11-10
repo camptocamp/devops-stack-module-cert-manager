@@ -80,9 +80,10 @@ variable "dependency_ids" {
 ## Module variables
 #######################
 
-variable "letsencrypt_issuer_email" {
-  description = "Email address used to register with Let's Encrypt."
+variable "letsencrypt_issuer_email_main" {
+  description = "E-mail address used to register with Let's Encrypt."
   type        = string
+  default     = null # This value needs to be null and it is the variants job to make the outside variable required.
 }
 
 variable "use_default_dns01_solver" {

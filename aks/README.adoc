@@ -72,7 +72,7 @@ Type: `string`
 
 ==== [[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
 
-Description: Email address used to register with Let's Encrypt.
+Description: E-mail address used to register with Let's Encrypt.
 
 Type: `string`
 
@@ -183,6 +183,14 @@ Description: IDs of the other modules on which this module depends on.
 Type: `map(string)`
 
 Default: `{}`
+
+==== [[input_letsencrypt_issuer_email_main]] <<input_letsencrypt_issuer_email_main,letsencrypt_issuer_email_main>>
+
+Description: E-mail address used to register with Let's Encrypt.
+
+Type: `string`
+
+Default: `null`
 
 ==== [[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 
@@ -295,6 +303,12 @@ Description: List of cluster issuers created by cert-manager.
 |n/a
 |yes
 
+|[[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
+|E-mail address used to register with Let's Encrypt.
+|`string`
+|n/a
+|yes
+
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |Namespace used by Argo CD where the Application and AppProject resources should be created.
 |`string`
@@ -381,11 +395,11 @@ object({
 |`{}`
 |no
 
-|[[input_letsencrypt_issuer_email]] <<input_letsencrypt_issuer_email,letsencrypt_issuer_email>>
-|Email address used to register with Let's Encrypt.
+|[[input_letsencrypt_issuer_email_main]] <<input_letsencrypt_issuer_email_main,letsencrypt_issuer_email_main>>
+|E-mail address used to register with Let's Encrypt.
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_use_default_dns01_solver]] <<input_use_default_dns01_solver,use_default_dns01_solver>>
 |Whether to use the default dns01 solver configuration.

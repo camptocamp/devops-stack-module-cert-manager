@@ -35,7 +35,7 @@ module "cert-manager" {
 
   helm_values = concat(local.helm_values, var.helm_values)
 
-  letsencrypt_issuer_email = var.letsencrypt_issuer_email
+  letsencrypt_issuer_email_main = null
 
   dependency_ids = var.dependency_ids
 }

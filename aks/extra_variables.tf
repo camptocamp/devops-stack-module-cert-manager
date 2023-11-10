@@ -22,3 +22,8 @@ variable "cluster_oidc_issuer_url" {
   description = "The OIDC issuer URL that is associated with the cluster."
   type        = string
 }
+
+variable "letsencrypt_issuer_email" {
+  description = "E-mail address used to register with Let's Encrypt."
+  type        = string
+}
