@@ -84,7 +84,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v6.0.0"`
+Default: `"v7.0.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -258,7 +258,7 @@ Description: The CA certificate used by the `ca-issuer`. You can copy this value
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v6.0.0"`
+|`"v7.0.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>

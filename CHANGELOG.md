@@ -1,5 +1,22 @@
 # Changelog
 
+## [7.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v6.0.0...v7.0.0) (2023-11-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove our company mail from the Let's Encrypt issuer - we removed the e-mail that was hardcoded and added a new variable, called `letsencrypt_issuer_email`, that has no default value and is absolutely **required** on the module instantiation.
+
+### Features
+
+* define ca and default issuers on locals and transmit to chart ([563d385](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/563d3854463683da28831eb58addca54069d56da))
+* use loop to build issuers values and output them ([2e1f7c8](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/2e1f7c8445e9b06e2f7c7ebbb7888b89023ffbfd))
+
+
+### Bug Fixes
+
+* remove our company mail from the Let's Encrypt issuer ([16b297d](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/16b297ddb6ebc30af5ab7f8f2ffd2d15f7ad690a))
+
 ## [6.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v5.3.0...v6.0.0) (2023-11-02)
 
 
