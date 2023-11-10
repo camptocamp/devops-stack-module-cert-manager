@@ -9,12 +9,12 @@ locals {
     letsencrypt = {
       production = {
         name   = "letsencrypt-prod"
-        email  = var.letsencrypt_issuer_email
+        email  = var.letsencrypt_issuer_email_main
         server = "https://acme-v02.api.letsencrypt.org/directory"
       }
       staging = {
         name   = "letsencrypt-staging"
-        email  = var.letsencrypt_issuer_email
+        email  = var.letsencrypt_issuer_email_main
         server = "https://acme-staging-v02.api.letsencrypt.org/directory"
       }
     }
