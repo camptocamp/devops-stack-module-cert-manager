@@ -1,8 +1,18 @@
-data "azurerm_resource_group" "node_resource_group" {
-  name = var.node_resource_group_name
+# This null_resource is required otherwise Terraform would try to read the resource group data even if the resource
+# group was not created yet. 
+resource "null_resource" "dependencies" {
+  triggers = var.dependency_ids
 }
 
 data "azurerm_subscription" "primary" {
+}
+
+data "azurerm_resource_group" "node_resource_group" {
+  name = var.node_resource_group_name
+
+  depends_on = [
+    resource.null_resource.dependencies
+  ]
 }
 
 resource "azurerm_user_assigned_identity" "cert_manager" {
@@ -23,12 +33,12 @@ resource "azurerm_role_assignment" "dns_zone_contributor" {
 }
 
 resource "azurerm_federated_identity_credential" "cert_manager" {
-  name                = "cert_manager"
+  name                = "cert-manager"
   resource_group_name = data.azurerm_resource_group.node_resource_group.name
   audience            = ["api://AzureADTokenExchange"]
   issuer              = var.cluster_oidc_issuer_url
   parent_id           = azurerm_user_assigned_identity.cert_manager.id
-  subject             = "system:serviceaccount:${var.namespace}:cert-manager"
+  subject             = format("system:serviceaccount:%s:%s", var.namespace, var.destination_cluster != "in-cluster" ? "cert-manager-${var.destination_cluster}" : "cert-manager")
 }
 
 module "cert-manager" {
