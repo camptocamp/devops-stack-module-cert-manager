@@ -38,7 +38,7 @@ resource "azurerm_federated_identity_credential" "cert_manager" {
   audience            = ["api://AzureADTokenExchange"]
   issuer              = var.cluster_oidc_issuer_url
   parent_id           = azurerm_user_assigned_identity.cert_manager.id
-  subject             = format("system:serviceaccount:%s:%s", var.namespace, var.destination_cluster != "in-cluster" ? "cert-manager-${var.destination_cluster}" : "cert-manager")
+  subject             = format("system:serviceaccount:%s:cert-manager", var.namespace)
 }
 
 module "cert-manager" {
