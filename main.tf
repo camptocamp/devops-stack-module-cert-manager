@@ -63,7 +63,8 @@ resource "argocd_application" "this" {
       path            = "charts/cert-manager"
       target_revision = var.target_revision
       helm {
-        values = data.utils_deep_merge_yaml.values.output
+        release_name = "cert-manager"
+        values       = data.utils_deep_merge_yaml.values.output
       }
     }
 
@@ -75,7 +76,7 @@ resource "argocd_application" "this" {
     ignore_difference {
       group         = "admissionregistration.k8s.io"
       kind          = "ValidatingWebhookConfiguration"
-      name          = format("%s-webhook", var.destination_cluster != "in-cluster" ? "cert-manager-${var.destination_cluster}" : "cert-manager")
+      name          = "cert-manager-webhook"
       json_pointers = ["/webhooks/0/namespaceSelector/matchExpressions"]
     }
 
