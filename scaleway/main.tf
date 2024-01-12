@@ -1,7 +1,6 @@
 module "cert-manager" {
   source = "../self-signed/"
 
-  argocd_namespace       = var.argocd_namespace
   argocd_project         = var.argocd_project
   argocd_labels          = var.argocd_labels
   destination_cluster    = var.destination_cluster

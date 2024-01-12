@@ -44,7 +44,6 @@ resource "azurerm_federated_identity_credential" "cert_manager" {
 module "cert-manager" {
   source = "../"
 
-  argocd_namespace       = var.argocd_namespace
   argocd_project         = var.argocd_project
   argocd_labels          = var.argocd_labels
   destination_cluster    = var.destination_cluster
