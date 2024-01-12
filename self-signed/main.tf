@@ -28,7 +28,6 @@ module "cert-manager" {
   argocd_labels          = var.argocd_labels
   destination_cluster    = var.destination_cluster
   target_revision        = var.target_revision
-  namespace              = var.namespace
   enable_service_monitor = var.enable_service_monitor
   deep_merge_append_list = var.deep_merge_append_list
   app_autosync           = var.app_autosync

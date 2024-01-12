@@ -38,7 +38,7 @@ resource "azurerm_federated_identity_credential" "cert_manager" {
   audience            = ["api://AzureADTokenExchange"]
   issuer              = var.cluster_oidc_issuer_url
   parent_id           = azurerm_user_assigned_identity.cert_manager.id
-  subject             = format("system:serviceaccount:%s:cert-manager", var.namespace)
+  subject             = "system:serviceaccount:cert-manager:cert-manager"
 }
 
 module "cert-manager" {
@@ -49,7 +49,6 @@ module "cert-manager" {
   argocd_labels          = var.argocd_labels
   destination_cluster    = var.destination_cluster
   target_revision        = var.target_revision
-  namespace              = var.namespace
   enable_service_monitor = var.enable_service_monitor
   deep_merge_append_list = var.deep_merge_append_list
   app_autosync           = var.app_autosync
