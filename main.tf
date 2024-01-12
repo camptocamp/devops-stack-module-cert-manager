@@ -19,7 +19,7 @@ resource "argocd_project" "this" {
 
     destination {
       name      = var.destination_cluster
-      namespace = var.namespace
+      namespace = "cert-manager"
     }
 
     destination {
@@ -70,7 +70,7 @@ resource "argocd_application" "this" {
 
     destination {
       name      = var.destination_cluster
-      namespace = var.namespace
+      namespace = "cert-manager"
     }
 
     ignore_difference {
