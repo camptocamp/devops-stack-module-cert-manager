@@ -13,6 +13,8 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
+- [[provider_null]] <<provider_null,null>> (>= 3)
+
 - [[provider_azurerm]] <<provider_azurerm,azurerm>>
 
 === Modules
@@ -32,6 +34,7 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential[azurerm_federated_identity_credential.cert_manager] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] (resource)
+- https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] (data source)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] (data source)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] (data source)
@@ -80,14 +83,6 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
-==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-
-Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
-
-Type: `string`
-
-Default: `"argocd"`
-
 ==== [[input_argocd_project]] <<input_argocd_project,argocd_project>>
 
 Description: Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
@@ -118,15 +113,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v7.0.0"`
-
-==== [[input_namespace]] <<input_namespace,namespace>>
-
-Description: Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-
-Type: `string`
-
-Default: `"cert-manager"`
+Default: `"v7.0.1"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -244,6 +231,7 @@ Description: List of cluster issuers created by cert-manager.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
+|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_azurerm]] <<provider_azurerm,azurerm>> |n/a
 |===
 
@@ -263,6 +251,7 @@ Description: List of cluster issuers created by cert-manager.
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential[azurerm_federated_identity_credential.cert_manager] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.dns_zone_contributor] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.cert_manager] |resource
+|https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone[azurerm_dns_zone.this] |data source
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] |data source
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] |data source
@@ -309,12 +298,6 @@ Description: List of cluster issuers created by cert-manager.
 |n/a
 |yes
 
-|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-|Namespace used by Argo CD where the Application and AppProject resources should be created.
-|`string`
-|`"argocd"`
-|no
-
 |[[input_argocd_project]] <<input_argocd_project,argocd_project>>
 |Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
 |`string`
@@ -336,13 +319,7 @@ Description: List of cluster issuers created by cert-manager.
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v7.0.0"`
-|no
-
-|[[input_namespace]] <<input_namespace,namespace>>
-|Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-|`string`
-|`"cert-manager"`
+|`"v7.0.1"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
