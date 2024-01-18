@@ -34,10 +34,6 @@ locals {
 
   helm_values = [{
     cert-manager = {
-      # workload identity is suported since 1.11.0. TODO remove the hard-coded tag when upgrading to a chart that runs a cert-manager version higher than 1.11.0.
-      image = {
-        tag = "v1.11.0"
-      }
       podLabels = {
         "azure.workload.identity/use" = "true"
       }
