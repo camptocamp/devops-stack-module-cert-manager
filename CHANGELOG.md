@@ -1,5 +1,28 @@
 # Changelog
 
+## [8.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v7.0.1...v8.0.0) (2024-01-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove the ArgoCD namespace variable
+* remove the namespace variable
+* hardcode the release name to remove the destination cluster
+
+### Features
+
+* add default rules to alert for expiring certificates ([#82](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/82)) ([d02a4e9](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/d02a4e9c5e090298f5c44cfa3491a9c2c1a90b9f))
+* **chart:** patch update of dependencies on cert-manager chart ([#79](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/79)) ([c086887](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/c086887cd96e153bafd166fb9931d5382651039b))
+
+
+### Bug Fixes
+
+* **aks:** fix resource group dependency ([9ecfa4c](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/9ecfa4c079d238eef410259885d4f455a77204da))
+* **aks:** remove image tag because chart has been upgraded ([56d78db](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/56d78db18ce7de18f2cf4806b45ed496de01b710))
+* hardcode the release name to remove the destination cluster ([210d3ad](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/210d3ad5066cc342fd20d48c66ae58f3d9286492))
+* remove the ArgoCD namespace variable ([b540733](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/b54073381a7f115ff949fec122c2d2b61d320476))
+* remove the namespace variable ([728f40a](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/728f40a12d4cb52fb80e65e37ab33f89df54b081))
+
 ## [7.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v7.0.0...v7.0.1) (2023-11-10)
 
 
