@@ -1,17 +1,11 @@
----
 {{- if index .Values "cert-manager" "prometheus" "servicemonitor" "enabled" }}
+---
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
-  name: {{ .Chart.Name }}-certificates.rules
-  namespace: {{ index .Values "cert-manager" "namespace" }}
+  name: {{ $.Release.Name }}-prometheus-rules
   labels:
-    app: {{ .Chart.Name }}
-    app.kubernetes.io/name: {{ .Chart.Name }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-    app.kubernetes.io/component: "controller"
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    name: {{ $.Release.Name }}-prometheus-rules
 spec:
   groups:
   - name: cert-manager
