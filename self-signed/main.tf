@@ -33,6 +33,7 @@ module "cert-manager" {
 
   helm_values = concat(local.helm_values, var.helm_values)
 
+  resources                     = var.resources
   letsencrypt_issuer_email_main = null
 
   dependency_ids = var.dependency_ids
