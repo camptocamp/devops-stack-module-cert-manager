@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.2.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.1.0...v8.2.0) (2024-04-16)
+
+
+### Features
+
+* add variable to set resources with default values ([#87](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/87)) ([a7a4c6d](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/a7a4c6daaa69cceecb490bcf8a9ff08bda0d2bfa))
+
 ## [8.1.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.0.0...v8.1.0) (2024-03-01)
 
 
