@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.3.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.2.0...v8.3.0) (2024-06-07)
+
+
+### Features
+
+* **chart:** minor update of dependencies on cert-manager chart ([#89](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/89)) ([9691a2d](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/9691a2d6234a7855040e77d32214330d2d0759d0))
+
 ## [8.2.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.1.0...v8.2.0) (2024-04-16)
 
 
