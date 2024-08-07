@@ -19,6 +19,12 @@ resource "azurerm_user_assigned_identity" "cert_manager" {
   resource_group_name = data.azurerm_resource_group.node_resource_group.name
   location            = data.azurerm_resource_group.node_resource_group.location
   name                = "cert-manager"
+
+  lifecycle {
+    ignore_changes = [
+      location,
+    ]
+  }
 }
 
 data "azurerm_dns_zone" "this" {
