@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.6.0...v9.0.0) (2024-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* point the Argo CD provider to the new repository ([#98](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/98))
+
+### Features
+
+* point the Argo CD provider to the new repository ([#98](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/98)) ([1129b32](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/1129b324caeeaedd24beb8cfb1bcf45e90efcdb6))
+
 ## [8.6.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.5.0...v8.6.0) (2024-08-20)
 
 
