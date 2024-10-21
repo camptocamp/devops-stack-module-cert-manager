@@ -54,15 +54,38 @@ locals {
         }
       }
     }
-    issuers = {
-      default = local.issuers.default
-      ca      = local.issuers.ca
-      letsencrypt = { for issuer_id, issuer in local.issuers.letsencrypt :
-        issuer.name => {
-          email  = issuer.email
-          server = issuer.server
+
+    # This structure is overloaded and merged with the values of the same structure coming from the caller modules.
+    clusterIssuers = {
+      default = {
+        name = local.issuers.default.name
+      }
+      ca = {
+        name = local.issuers.ca.name
+      }
+      letsencrypt = {
+        enabled = false
+        issuers = { for issuer_id, issuer in local.issuers.letsencrypt :
+          issuer.name => {
+            email  = issuer.email
+            server = issuer.server
+          }
+        }
+        acme = {
+          solvers = []
         }
       }
     }
+
+    # issuers = {
+    #   default = local.issuers.default
+    #   ca      = local.issuers.ca
+    #   letsencrypt = { for issuer_id, issuer in local.issuers.letsencrypt :
+    #     issuer.name => {
+    #       email  = issuer.email
+    #       server = issuer.server
+    #     }
+    #   }
+    # }
   }]
 }
