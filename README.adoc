@@ -34,11 +34,11 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
+- [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
-- [[provider_utils]] <<provider_utils,utils>> (>= 1)
+- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
@@ -197,6 +197,22 @@ object({
       }), {})
     }), {})
 
+  })
+----
+
+Default: `{}`
+
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of replicas for cert-manager's components.
+
+Type:
+[source,hcl]
+----
+object({
+    controller = optional(number, 1)
+    webhook    = optional(number, 1)
+    cainjector = optional(number, 1)
   })
 ----
 
@@ -419,6 +435,22 @@ object({
       }), {})
     }), {})
 
+  })
+----
+
+|`{}`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of replicas for cert-manager's components.
+|
+
+[source]
+----
+object({
+    controller = optional(number, 1)
+    webhook    = optional(number, 1)
+    cainjector = optional(number, 1)
   })
 ----
 

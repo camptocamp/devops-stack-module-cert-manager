@@ -228,6 +228,22 @@ object({
 
 Default: `{}`
 
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of replicas for cert-manager's components.
+
+Type:
+[source,hcl]
+----
+object({
+    controller = optional(number, 1)
+    webhook    = optional(number, 1)
+    cainjector = optional(number, 1)
+  })
+----
+
+Default: `{}`
+
 ==== [[input_letsencrypt_issuer_email_main]] <<input_letsencrypt_issuer_email_main,letsencrypt_issuer_email_main>>
 
 Description: E-mail address used to register with Let's Encrypt.
@@ -475,6 +491,22 @@ object({
       }), {})
     }), {})
 
+  })
+----
+
+|`{}`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of replicas for cert-manager's components.
+|
+
+[source]
+----
+object({
+    controller = optional(number, 1)
+    webhook    = optional(number, 1)
+    cainjector = optional(number, 1)
   })
 ----
 
