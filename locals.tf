@@ -31,17 +31,20 @@ locals {
           enabled = var.enable_service_monitor
         }
       }
+      replicaCount = var.replicas.controller
       resources = {
         requests = { for k, v in var.resources.controller.requests : k => v if v != null }
         limits   = { for k, v in var.resources.controller.limits : k => v if v != null }
       }
       webhook = {
+        replicaCount = var.replicas.webhook
         resources = {
           requests = { for k, v in var.resources.webhook.requests : k => v if v != null }
           limits   = { for k, v in var.resources.webhook.limits : k => v if v != null }
         }
       }
       cainjector = {
+        replicaCount = var.replicas.cainjector
         resources = {
           requests = { for k, v in var.resources.cainjector.requests : k => v if v != null }
           limits   = { for k, v in var.resources.cainjector.limits : k => v if v != null }
