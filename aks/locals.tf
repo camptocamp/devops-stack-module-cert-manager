@@ -44,14 +44,6 @@ locals {
           "azure.workload.identity/client-id" = azurerm_user_assigned_identity.cert_manager.client_id
         }
       }
-      clusterIssuers = {
-        letsencrypt = {
-          enabled = true
-        }
-        acme = {
-          solvers = local.solvers
-        }
-      }
       replicaCount = 2
       resources = {
         limits = {
@@ -86,6 +78,16 @@ locals {
             cpu    = "10m"
             memory = "32Mi"
           }
+        }
+      }
+    }
+
+    # This structure will be merged with the one with the same name on the root locals.tf.
+    clusterIssuers = {
+      letsencrypt = {
+        enabled = true
+        acme = {
+          solvers = local.solvers
         }
       }
     }
