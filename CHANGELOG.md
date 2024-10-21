@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v9.0.0...v9.0.1) (2024-10-21)
+
+
+### Bug Fixes
+
+* grafana panels uses angular deprecated plugin ([#100](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/100)) ([675c012](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/675c012e224a886500a3d2321d73e0a546a6a2da))
+
 ## [9.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v8.6.0...v9.0.0) (2024-10-09)
 
 
