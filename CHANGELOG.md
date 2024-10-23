@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.0.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v9.0.1...v9.0.2) (2024-10-23)
+
+
+### Bug Fixes
+
+* **dashboards:** add release in file name to avoid duplicates ([#103](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/103)) ([2b92b82](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/2b92b8202df3eaabc561fa293a924e3e73fa946c))
+
 ## [9.0.1](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v9.0.0...v9.0.1) (2024-10-21)
 
 
