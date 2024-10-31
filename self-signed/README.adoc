@@ -66,7 +66,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v9.0.1"`
+Default: `"v9.0.2"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -184,6 +184,22 @@ object({
 
 Default: `{}`
 
+==== [[input_replicas]] <<input_replicas,replicas>>
+
+Description: Number of replicas for cert-manager's components.
+
+Type:
+[source,hcl]
+----
+object({
+    controller = optional(number, 1)
+    webhook    = optional(number, 1)
+    cainjector = optional(number, 1)
+  })
+----
+
+Default: `{}`
+
 ==== [[input_letsencrypt_issuer_email_main]] <<input_letsencrypt_issuer_email_main,letsencrypt_issuer_email_main>>
 
 Description: E-mail address used to register with Let's Encrypt.
@@ -294,7 +310,7 @@ Description: The CA certificate used by the `ca-issuer`. You can copy this value
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v9.0.1"`
+|`"v9.0.2"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
@@ -402,6 +418,22 @@ object({
       }), {})
     }), {})
 
+  })
+----
+
+|`{}`
+|no
+
+|[[input_replicas]] <<input_replicas,replicas>>
+|Number of replicas for cert-manager's components.
+|
+
+[source]
+----
+object({
+    controller = optional(number, 1)
+    webhook    = optional(number, 1)
+    cainjector = optional(number, 1)
   })
 ----
 
