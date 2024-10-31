@@ -1,5 +1,23 @@
 # Changelog
 
+## [10.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v9.0.2...v10.0.0) (2024-10-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* **aks:** remove hardcoded resources and replicas
+
+### Features
+
+* add variable to set number of replicas ([fa0448e](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/fa0448e62a4f38d1fad05ec8d273b76c21fe62d4))
+* **chart:** minor update of dependencies on cert-manager chart ([0164b7f](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/0164b7f5e6e9d6a45a8145d2f800bcca13ac6fd1))
+
+
+### Bug Fixes
+
+* **aks:** remove hardcoded resources and replicas ([3c9bcff](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/3c9bcff8c6956f2ef3f386173411717cf689f77e))
+* remove unsupported values from the cert-manager field ([8ccf6aa](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/8ccf6aa146d5679688c9c2f0ea058870c0e3a558))
+
 ## [9.0.2](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v9.0.1...v9.0.2) (2024-10-23)
 
 
