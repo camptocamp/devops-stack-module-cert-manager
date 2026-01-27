@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v10.0.0...v11.0.0) (2026-01-27)
+
+
+### Features
+
+* **chart:** minor update of dependencies on cert-manager chart ([#107](https://github.com/camptocamp/devops-stack-module-cert-manager/issues/107)) ([d060fe3](https://github.com/camptocamp/devops-stack-module-cert-manager/commit/d060fe365ba542180558492d1e4560d1ca8d4c8e))
+
 ## [10.0.0](https://github.com/camptocamp/devops-stack-module-cert-manager/compare/v9.0.2...v10.0.0) (2024-10-31)
 
 
